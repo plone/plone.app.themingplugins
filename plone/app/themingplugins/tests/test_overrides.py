@@ -1,6 +1,6 @@
 import unittest2 as unittest
 
-from plone.app.theming.testing import THEMING_FUNCTIONAL_TESTING
+from plone.app.themingplugins.testing import THEMINGPLUGINS_FUNCTIONAL_TESTING
 from plone.testing.z2 import Browser
 
 import Globals
@@ -14,7 +14,7 @@ from plone.app.theming.interfaces import IThemeSettings
 
 class TestCase(unittest.TestCase):
 
-    layer = THEMING_FUNCTIONAL_TESTING
+    layer = THEMINGPLUGINS_FUNCTIONAL_TESTING
 
     def setUp(self):
         # Enable debug mode always to ensure cache is disabled by default
@@ -23,7 +23,7 @@ class TestCase(unittest.TestCase):
         self.settings = getUtility(IRegistry).forInterface(IThemeSettings)
 
         self.settings.enabled = False
-        self.settings.rules = u'python://plone.app.theming/tests/rules.xml'
+        self.settings.rules = u'python://plone.app.themingplugins/tests/rules.xml'
         self.settings.parameterExpressions = {
                 'stringParam': 'string:string param value',
                 'boolParam': 'python:False',
@@ -45,8 +45,8 @@ class TestCase(unittest.TestCase):
         portal = self.layer['portal']
 
         self.settings.enabled = True
-        self.settings.rules = u'/++theme++plone.app.theming.tests/overridesrules.xml'
-        self.settings.currentTheme = u"plone.app.theming.tests"
+        self.settings.rules = u'/++theme++plone.app.themingplugins.tests/overridesrules.xml'
+        self.settings.currentTheme = u"plone.app.themingplugins.tests"
         import transaction; transaction.commit()
 
         browser = Browser(app)
@@ -69,8 +69,8 @@ class TestCase(unittest.TestCase):
         portal = self.layer['portal']
 
         self.settings.enabled = False
-        self.settings.rules = u'/++theme++plone.app.theming.tests/overridesrules.xml'
-        self.settings.currentTheme = u"plone.app.theming.tests"
+        self.settings.rules = u'/++theme++plone.app.themingplugins.tests/overridesrules.xml'
+        self.settings.currentTheme = u"plone.app.themingplugins.tests"
         import transaction; transaction.commit()
 
         browser = Browser(app)
