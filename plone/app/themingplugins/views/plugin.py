@@ -1,6 +1,7 @@
 import logging
 import os.path
 import Products.Five.browser.metaconfigure
+import zope.browsermenu.metaconfigure
 
 from ConfigParser import SafeConfigParser
 
@@ -123,6 +124,7 @@ class ViewsPlugin(object):
                 for_ = Interface
                 class_ = None
                 template = os.path.join(path, filename)
+                menu = {}
 
                 # Read override options from views.cfg if applicable
                 if viewConfig.has_section(name):
@@ -141,6 +143,14 @@ class ViewsPlugin(object):
                     if viewConfig.has_option(name, 'class'):
                         class_ = resolve(viewConfig.get(name, 'class'))
 
+                    if viewConfig.has_option(name, 'menu'):
+                        menu = dict(title=viewConfig.get(name, 'menu'),
+                                    menu=getattr(
+                                        zope.browsermenu.metaconfigure.menus,
+                                        "plone_displayviews"
+                                        ),
+                                )
+
                 Products.Five.browser.metaconfigure.page(
                         configurationMachine,
                         name=viewName,
@@ -149,6 +159,7 @@ class ViewsPlugin(object):
                         layer=layer,
                         template=template,
                         class_=class_,
+                        **menu
                     )
 
                 views.append(name)
