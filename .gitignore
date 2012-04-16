@@ -1,0 +1,9 @@
+*.py?
+*.sw?
+.installed.cfg
+.mr.developer.cfg
+bin/
+build/
+parts/
+develop-eggs/
+*.egg-info
