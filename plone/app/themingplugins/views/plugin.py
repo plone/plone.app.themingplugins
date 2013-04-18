@@ -83,7 +83,7 @@ class ViewsPlugin(object):
 
         directoryName = 'views'
         if 'directory' in settings:
-            directoryName = settings['views']
+            directoryName = settings['directory']
 
         if res.isDirectory(directoryName):
             viewsDir = res[directoryName]
