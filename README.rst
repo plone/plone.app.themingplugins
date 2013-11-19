@@ -36,6 +36,17 @@ enabled in the buildout. You can achieve this in one of two ways:
   the ``setup.py`` file for a package that is installed in your buildout,
   for example a package used to house your theme or site policy.
 
+Quick Example
+=============
+
+Assuming you are developing a diazo theme called my.theme, do the following  
+to override the logo viewlet when your diazo theme is activated:
+
+* add ``plone.app.themingplugins`` to the ``install_requires`` list in
+  ``src/my.theme/setup.py`` 
+* To override the logo viewlet add ``plone.app.layout.viewlets.logo.pt`` 
+  to src/my.theme/my/theme/theme/overrides and modify as required.
+
 The plugins
 ===========
 
