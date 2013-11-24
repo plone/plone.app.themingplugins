@@ -5,7 +5,7 @@ version = '1.0b1'
 setup(name='plone.app.themingplugins',
       version=version,
       description="Plugins providing advanced plone.app.theming integration",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
                        open("CHANGES.txt").read(),
       classifiers=[
         "Framework :: Plone",
