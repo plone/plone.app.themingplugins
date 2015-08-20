@@ -1,6 +1,16 @@
 Changelog
 =========
 
+1.0 (2015-08-20)
+----------------
+
+- Fix parsing of views plugin settings
+  [tlyng]
+
+- Add `Quick Example` section to REAMDE
+  [djowett]
+
+
 1.0b1
 -----
 
