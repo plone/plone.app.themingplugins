@@ -6,7 +6,7 @@ setup(name='plone.app.themingplugins',
       version=version,
       description="Plugins providing advanced plone.app.theming integration",
       long_description=open("README.rst").read() + "\n" +
-                       open("CHANGES.txt").read(),
+                       open("CHANGES.rst").read(),
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
@@ -29,7 +29,7 @@ setup(name='plone.app.themingplugins',
           'zope.configuration',
           'z3c.jbot',
       ],
-      extras_require = {
+      extras_require={
           'test': ['plone.app.testing']
       },
       entry_points="""
