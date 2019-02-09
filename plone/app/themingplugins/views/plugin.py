@@ -90,7 +90,7 @@ class ViewsPlugin(object):
 
                 try:
                     layer = resolve(layerName)
-                except (ImportError, AttributeError,):
+                except (ImportError, AttributeError):
                     logger.warn("Could not import %s" % layerName)
                     return
 
@@ -139,23 +139,24 @@ class ViewsPlugin(object):
                         class_ = resolve(viewConfig.get(name, 'class'))
 
                     if viewConfig.has_option(name, 'menu'):
-                        menu = dict(title=viewConfig.get(name, 'menu'),
-                                    menu=getattr(
-                                        zope.browsermenu.metaconfigure.menus,
-                                        "plone_displayviews"
-                                        ),
-                                )
+                        menu = dict(
+                            title=viewConfig.get(name, 'menu'),
+                            menu=getattr(
+                                zope.browsermenu.metaconfigure.menus,
+                                "plone_displayviews",
+                            ),
+                        )
 
                 Products.Five.browser.metaconfigure.page(
-                        configurationMachine,
-                        name=viewName,
-                        permission=permission,
-                        for_=for_,
-                        layer=layer,
-                        template=template,
-                        class_=class_,
-                        **menu
-                    )
+                    configurationMachine,
+                    name=viewName,
+                    permission=permission,
+                    for_=for_,
+                    layer=layer,
+                    template=template,
+                    class_=class_,
+                    **menu
+                )
 
                 views.append(name)
 

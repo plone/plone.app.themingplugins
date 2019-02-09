@@ -21,14 +21,18 @@ class TestCase(unittest.TestCase):
         self.settings = getUtility(IRegistry).forInterface(IThemeSettings)
 
         self.settings.enabled = False
-        self.settings.rules = u'python://plone.app.themingplugins/tests/rules.xml'
+        self.settings.rules = (
+            u'python://plone.app.themingplugins/tests/rules.xml'
+        )
         self.settings.parameterExpressions = {
-                'stringParam': 'string:string param value',
-                'boolParam': 'python:False',
-                'requestParam': 'request/useother | string:off'
-            }
+            'stringParam': 'string:string param value',
+            'boolParam': 'python:False',
+            'requestParam': 'request/useother | string:off',
+        }
 
-        import transaction; transaction.commit()
+        import transaction
+
+        transaction.commit()
 
     def tearDown(self):
         Globals.DevelopmentMode = False
@@ -43,9 +47,13 @@ class TestCase(unittest.TestCase):
         portal = self.layer['portal']
 
         self.settings.enabled = True
-        self.settings.rules = u'/++theme++plone.app.themingplugins.tests/overridesrules.xml'
+        self.settings.rules = (
+            u'/++theme++plone.app.themingplugins.tests/overridesrules.xml'
+        )
         self.settings.currentTheme = u"plone.app.themingplugins.tests"
-        import transaction; transaction.commit()
+        import transaction
+
+        transaction.commit()
 
         browser = Browser(app)
         browser.open(portal.absolute_url())
@@ -67,9 +75,13 @@ class TestCase(unittest.TestCase):
         portal = self.layer['portal']
 
         self.settings.enabled = False
-        self.settings.rules = u'/++theme++plone.app.themingplugins.tests/overridesrules.xml'
+        self.settings.rules = (
+            u'/++theme++plone.app.themingplugins.tests/overridesrules.xml'
+        )
         self.settings.currentTheme = u"plone.app.themingplugins.tests"
-        import transaction; transaction.commit()
+        import transaction
+
+        transaction.commit()
 
         browser = Browser(app)
         browser.open(portal.absolute_url())

@@ -12,6 +12,7 @@ import z3c.jbot.metaconfigure
 
 logger = logging.getLogger(__name__)
 
+
 @implementer(IThemePlugin)
 class OverridesPlugin(object):
     """This plugin automatically registers a ``z3c.jbot`` style template
@@ -58,7 +59,7 @@ class OverridesPlugin(object):
 
                 try:
                     layer = resolve(layerName)
-                except (ImportError, AttributeError,):
+                except (ImportError, AttributeError):
                     logger.warn("Could not import %s" % layerName)
                     return
 

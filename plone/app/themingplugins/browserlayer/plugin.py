@@ -29,12 +29,12 @@ class BrowserLayerPlugin(object):
     doesn't matter.
     """
 
-
-
     dependencies = ()
 
     def onDiscovery(self, theme, settings, dependenciesSettings):
-        layer = InterfaceClass(theme, (Interface,), __module__=schemata.__name__)
+        layer = InterfaceClass(
+            theme, (Interface,), __module__=schemata.__name__
+        )
         setattr(schemata, theme, layer)
 
     def onCreated(self, theme, settings, dependenciesSettings):
@@ -61,5 +61,5 @@ class BrowserLayerPlugin(object):
             try:
                 layer = resolve(name)
                 alsoProvides(request, layer)
-            except (ImportError, AttributeError,):
+            except (ImportError, AttributeError):
                 logger.warn("Could not import %s" % name)
