@@ -2,7 +2,7 @@ import logging
 import os.path
 import z3c.jbot.metaconfigure
 
-from zope.interface import implements
+from zope.interface import implementer
 from zope.dottedname.resolve import resolve
 
 from plone.resource.utils import queryResourceDirectory
@@ -14,6 +14,7 @@ from plone.app.themingplugins.browserlayer import schemata
 
 logger = logging.getLogger(__name__)
 
+@implementer(IThemePlugin)
 class OverridesPlugin(object):
     """This plugin automatically registers a ``z3c.jbot`` style template
     overrides directory for the theme.
@@ -36,8 +37,6 @@ class OverridesPlugin(object):
     The directory name is relative to the theme directory. The layer interface
     must already exist.
     """
-
-    implements(IThemePlugin)
 
     dependencies = ('browserlayer',)
 

@@ -5,7 +5,7 @@ import zope.browsermenu.metaconfigure
 
 from ConfigParser import SafeConfigParser
 
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import Interface
 
 from zope.configuration.config import ConfigurationMachine
@@ -24,6 +24,8 @@ VIEW_CONFIG_FILENAME = "views.cfg"
 
 logger = logging.getLogger(__name__)
 
+
+@implementer(IThemePlugin)
 class ViewsPlugin(object):
     """This plugin can be used to register any number of browser views from
     a directory containing page templates.
@@ -69,8 +71,6 @@ class ViewsPlugin(object):
 
     All options are optional, as is the ``views.cfg`` file itself.
     """
-
-    implements(IThemePlugin)
 
     dependencies = ('browserlayer',)
 

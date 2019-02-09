@@ -1,6 +1,6 @@
 import logging
 
-from zope.interface import implements
+from zope.interface import implementer
 from zope.interface import alsoProvides
 from zope.interface import Interface
 from zope.interface.interface import InterfaceClass
@@ -13,6 +13,8 @@ from plone.app.themingplugins.browserlayer import schemata
 
 logger = logging.getLogger(__name__)
 
+
+@implementer(IThemePlugin)
 class BrowserLayerPlugin(object):
     """This plugin dynamically creates a browser layer marker interface for
     this theme and applies it to the request when the theme is enabled.
@@ -29,7 +31,7 @@ class BrowserLayerPlugin(object):
     doesn't matter.
     """
 
-    implements(IThemePlugin)
+
 
     dependencies = ()
 
