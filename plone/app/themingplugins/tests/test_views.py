@@ -1,20 +1,17 @@
-import unittest2 as unittest
-
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.app.theming.interfaces import IThemeSettings
 from plone.app.themingplugins.testing import THEMINGPLUGINS_FUNCTIONAL_TESTING
-from plone.testing.z2 import Browser
-
-from plone.app.testing import setRoles, TEST_USER_ID
-
-import Globals
-
-from urllib2 import HTTPError
-
-from Products.CMFCore.Expression import Expression, getExprContext
-
 from plone.registry.interfaces import IRegistry
+from plone.testing.z2 import Browser
+from Products.CMFCore.Expression import Expression
+from Products.CMFCore.Expression import getExprContext
+from urllib2 import HTTPError
 from zope.component import getUtility
 
-from plone.app.theming.interfaces import IThemeSettings
+import Globals
+import unittest2 as unittest
+
 
 class TestCase(unittest.TestCase):
 
@@ -156,4 +153,3 @@ class TestCase(unittest.TestCase):
 
         self.assertTrue("<h1>Permission view</h1>" in browser.contents)
         self.assertTrue("<div>Plone site</div>" in browser.contents)
-

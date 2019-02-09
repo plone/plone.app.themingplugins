@@ -1,23 +1,18 @@
+from ConfigParser import SafeConfigParser
+from plone.app.theming.interfaces import IThemePlugin
+from plone.app.theming.interfaces import THEME_RESOURCE_NAME
+from plone.app.themingplugins.browserlayer import schemata
+from plone.resource.utils import queryResourceDirectory
+from zope.configuration.config import ConfigurationMachine
+from zope.dottedname.resolve import resolve
+from zope.interface import implementer
+from zope.interface import Interface
+
 import logging
 import os.path
 import Products.Five.browser.metaconfigure
 import zope.browsermenu.metaconfigure
 
-from ConfigParser import SafeConfigParser
-
-from zope.interface import implementer
-from zope.interface import Interface
-
-from zope.configuration.config import ConfigurationMachine
-
-from zope.dottedname.resolve import resolve
-
-from plone.resource.utils import queryResourceDirectory
-
-from plone.app.theming.interfaces import IThemePlugin
-from plone.app.theming.interfaces import THEME_RESOURCE_NAME
-
-from plone.app.themingplugins.browserlayer import schemata
 
 EXTENSION = ".pt"
 VIEW_CONFIG_FILENAME = "views.cfg"

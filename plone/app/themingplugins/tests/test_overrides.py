@@ -1,16 +1,14 @@
-import unittest2 as unittest
-
+from plone.app.theming.interfaces import IThemeSettings
 from plone.app.themingplugins.testing import THEMINGPLUGINS_FUNCTIONAL_TESTING
-from plone.testing.z2 import Browser
-
-import Globals
-
-from Products.CMFCore.Expression import Expression, getExprContext
-
 from plone.registry.interfaces import IRegistry
+from plone.testing.z2 import Browser
+from Products.CMFCore.Expression import Expression
+from Products.CMFCore.Expression import getExprContext
 from zope.component import getUtility
 
-from plone.app.theming.interfaces import IThemeSettings
+import Globals
+import unittest2 as unittest
+
 
 class TestCase(unittest.TestCase):
 

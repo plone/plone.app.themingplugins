@@ -1,16 +1,14 @@
+from plone.app.theming.interfaces import IThemePlugin
+from plone.app.theming.interfaces import THEME_RESOURCE_NAME
+from plone.app.themingplugins.browserlayer import schemata
+from plone.resource.utils import queryResourceDirectory
+from zope.dottedname.resolve import resolve
+from zope.interface import implementer
+
 import logging
 import os.path
 import z3c.jbot.metaconfigure
 
-from zope.interface import implementer
-from zope.dottedname.resolve import resolve
-
-from plone.resource.utils import queryResourceDirectory
-
-from plone.app.theming.interfaces import IThemePlugin
-from plone.app.theming.interfaces import THEME_RESOURCE_NAME
-
-from plone.app.themingplugins.browserlayer import schemata
 
 logger = logging.getLogger(__name__)
 

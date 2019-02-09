@@ -1,15 +1,13 @@
-import logging
-
-from zope.interface import implementer
+from plone.app.theming.interfaces import IThemePlugin
+from plone.app.themingplugins.browserlayer import schemata
+from zope.dottedname.resolve import resolve
 from zope.interface import alsoProvides
+from zope.interface import implementer
 from zope.interface import Interface
 from zope.interface.interface import InterfaceClass
 
-from zope.dottedname.resolve import resolve
+import logging
 
-from plone.app.theming.interfaces import IThemePlugin
-
-from plone.app.themingplugins.browserlayer import schemata
 
 logger = logging.getLogger(__name__)
 
