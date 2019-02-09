@@ -1,4 +1,3 @@
-from ConfigParser import SafeConfigParser
 from plone.app.theming.interfaces import IThemePlugin
 from plone.app.theming.interfaces import THEME_RESOURCE_NAME
 from plone.app.themingplugins.browserlayer import schemata
@@ -12,7 +11,7 @@ import logging
 import os.path
 import Products.Five.browser.metaconfigure
 import zope.browsermenu.metaconfigure
-
+from six.moves.configparser import SafeConfigParser
 
 EXTENSION = ".pt"
 VIEW_CONFIG_FILENAME = "views.cfg"

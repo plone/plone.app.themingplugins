@@ -22,13 +22,14 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'setuptools',
         'plone.app.theming',
-        'zope.interface',
-        'zope.dottedname',
         'plone.resource',
-        'zope.configuration',
+        'setuptools',
+        'six',
         'z3c.jbot',
+        'zope.configuration',
+        'zope.dottedname',
+        'zope.interface',
     ],
     extras_require={'test': ['plone.app.testing']},
     entry_points="""
