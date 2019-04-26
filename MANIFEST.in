@@ -1,0 +1,5 @@
+graft plone/app/themingplugins
+graft docs
+include *.rst
+include pyproject.toml
+global-exclude *.pyc
