@@ -4,7 +4,7 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix reading views.cfg file on python3
 
 
 1.1 (2019-04-26)
