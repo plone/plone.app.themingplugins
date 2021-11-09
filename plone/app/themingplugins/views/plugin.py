@@ -11,7 +11,7 @@ import logging
 import os.path
 import Products.Five.browser.metaconfigure
 import zope.browsermenu.metaconfigure
-from six.moves.configparser import SafeConfigParser
+from six.moves.configparser import ConfigParser
 
 EXTENSION = ".pt"
 VIEW_CONFIG_FILENAME = "views.cfg"
@@ -93,12 +93,12 @@ class ViewsPlugin(object):
                     logger.warn("Could not import %s" % layerName)
                     return
 
-            viewConfig = SafeConfigParser()
+            viewConfig = ConfigParser()
 
             if viewsDir.isFile(VIEW_CONFIG_FILENAME):
                 fp = viewsDir.openFile(VIEW_CONFIG_FILENAME)
                 try:
-                    viewConfig.readfp(fp)
+                    viewConfig.read_string(fp.read().decode())
                 finally:
                     try:
                         fp.close()
