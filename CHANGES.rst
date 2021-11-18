@@ -4,7 +4,7 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Python3 compat: Fix bytes decoding for views.cfg file
 
 
 1.1 (2019-04-26)
