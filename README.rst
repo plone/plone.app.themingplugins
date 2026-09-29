@@ -148,7 +148,7 @@ options in each section are:
 * ``name``, to change the view name
 * ``permission``, to give a different permission name
 * ``for``, to change the view's context
-* ``class``, to let the view re-use an existing view class
+* ``class``, to let the view reuse an existing view class
 
 For example::
 

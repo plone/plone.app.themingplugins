@@ -1,4 +1,4 @@
-graft plone/app/themingplugins
+graft src/plone/app/themingplugins
 graft docs
 include *.rst
 include pyproject.toml
