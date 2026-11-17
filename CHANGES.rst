@@ -1,10 +1,19 @@
 Changelog
 =========
 
-1.3 (unreleased)
-----------------
+2.0.0 (unreleased)
+------------------
 
-- Nothing changed yet.
+Breaking changes:
+
+- Drop support for Python 2 and Plone 4/5. Supported: Plone 6.0-6.3,
+  Python 3.9+.
+  [remdub]
+
+- Replace ``pkg_resources`` namespace with PEP 420 native namespace,
+  move to a ``src`` layout and move package metadata from ``setup.py``
+  to ``pyproject.toml``.
+  [remdub]
 
 
 1.2 (2024-10-21)
@@ -25,7 +34,7 @@ Changelog
 - Fix parsing of views plugin settings
   [tlyng]
 
-- Add `Quick Example` section to REAMDE
+- Add `Quick Example` section to README
   [djowett]
 
 

@@ -1,0 +1,6 @@
+<html>
+  <body>
+    <h1 i18n:translate="">Permission view</h1>
+    <div tal:content="context/Title | nothing">title here</div>
+  </body>
+</html>
