@@ -3,9 +3,12 @@
 # See the inline comments on how to expand/tweak this configuration file
 [meta]
 template = "default"
-commit-id = "2.11.1"
+commit-id = "2.13.1"
 
 [gitignore]
 extra_lines = """
 .venv
 """
+
+[tox]
+test_matrix = {"6.3" = ["*"], "6.2" = ["*"]}
